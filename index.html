@@ -30,7 +30,7 @@
           >
           <ul class="header-menu">
             <li class="header-item">
-              <a class="header-item-link" href="./index.html">Studio</a>
+              <a class="header-item-link current" href="./index.html">Studio</a>
             </li>
             <li class="header-item">
               <a class="header-item-link" href="./portfolio.html">Portfolio</a>
@@ -64,7 +64,9 @@
           <h1 class="hero-header-title">
             Effective Solutions for Your Business
           </h1>
-          <button class="hero-button" type="button">Order Service</button>
+          <button class="hero-button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- section sides -->
@@ -570,5 +572,11 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <div><button class="close-btn" data-modal-close></button></div>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
