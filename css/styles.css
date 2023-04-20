@@ -12,7 +12,10 @@
 --color-navy-blue-modal: #2e2f42;
 --color-grey: #2e2f42;
 --color-white: #ffffff;
---color-dairy: #fcfcfc;}
+--color-dairy: #fcfcfc;
+--transition: 1500ms cubic-bezier(0.4, 0, 0.2, 1)
+
+}
 
 
 /**
@@ -102,15 +105,18 @@ body {
     text-transform: uppercase;
     color: #4d5ae5;
     margin-right: 76px;
+    transition: color var(--transition);
     }
 .logo:focus,
-.logo:hover{color: #404BBF;}
+.logo:hover{
+    color: #404BBF;}
 .header-span {
-    /* LOGO styles */
-        color: #2e2f42;
+    transition: color var(--transition);
+    color: #2e2f42;
 }
 .header-span:hover,
-.header-span:focus{color: #404BBF;}
+.header-span:focus{
+    color: #404BBF;}
 
 .header-menu {
     display: flex;       
@@ -118,6 +124,7 @@ body {
 }
 .header-item:focus,
 .header-item:hover{
+        transition-duration: 250ms;
         color: #404BBF;
     }
 .header-item{
@@ -125,9 +132,15 @@ body {
     padding-bottom: 24px;
  } 
 .header-item-link {
+    font-weight: 500;
     line-height: 1.5;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color var(--transition);
+}
+.header-item-link:focus,
+.header-item-link:hover{
+        color: #404BBF;
 }
 
 /* .header-address {}  */
@@ -142,12 +155,21 @@ body {
 }
 /* .header-address-item {} */
 
+.header-item-mail{
+    transition: color var(--transition);
+}
 .header-item-mail:focus,
-.header-item-mail:hover{color: #404BBF;}
-
+.header-item-mail:hover{
+    color: #404BBF;
+}
+.header-item-phone{
+    transition: color var(--transition);
+}
 .header-item-phone:hover,
 .header-item-phone:focus
- {color: #404BBF;}
+ {
+    color: #404BBF;
+}
  .current{
     position: relative;
 }
@@ -212,6 +234,7 @@ body {
     height: 56px;
     border: none;
     border-radius: 4px;
+    transition: background-color var(--transition);
 }
 .hero-button:focus,
 .hero-button:hover {
@@ -371,12 +394,11 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 8px;
+    transition: background-color var(--transition);
     } 
-.social-link:hover{
-    background-color: #404BBF;
-}
+.social-link:hover,
 .social-link:focus{
-    background-color: #404BBF ;
+    background-color: #404BBF;
 }
 .social-icon{
     fill: #f4f4fd ;
@@ -407,10 +429,9 @@ body {
     display: flex;
     gap: 24px;    
 }
-.c-item{ color:#8E8F99
-
-}
-.c-link {   
+.c-link{ 
+    color:#8E8F99;
+    transition: color var(--transition), border-color var(--transition);
     fill: currentColor;  
     width: 168px;
     height: 88px;    
@@ -421,10 +442,12 @@ body {
     border: 1px solid #8E8F99;
     border-radius: 4px;
 }
+/* .c-link {   
+} */
 .c-link:focus,
-.c-link:hover{
+.c-link:hover {
     color: #404BBF;
-    border: 1px solid #404BBF;
+    border-color: #404BBF;
 
 
 }
@@ -454,6 +477,7 @@ body {
 }
 .footer-span{
     color: #F4F4FD;
+    transition: color var(--transition);
 }
 .footer-span:hover,
 .footer-span:focus {
@@ -478,6 +502,9 @@ body {
 .footer-social-links{
     display: flex;
     gap: 16px;  
+}
+.social-link-hf{
+    transition: background-color var(--transition);
 }
 .social-link-hf:hover,
 .social-link-hf:focus{
@@ -542,14 +569,13 @@ body {
     background: #F4F4FD;
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    transition: color var(--transition), background-color var(--transition), box-shadow var(--transition);
 }
 .portfolio-btn:focus,
 .portfolio-btn:hover{
     color: white;
-    background: #404BBF;
+    background-color: #404BBF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    border: 1px solid transparent;
 }
 /* .portfolio-card{} */
 .cards-menu {
@@ -564,7 +590,9 @@ body {
 }
 .portfolio-img:hover,
 .portfolio-img:focus{
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    /* border: 1px solid black; */
+    transition-duration: 250ms;
+    /* box-shadow: 0px 1px 6px rgba(15, 15, 15, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); */
 }
 .portfolio-img{
     display: block; 
@@ -573,6 +601,7 @@ body {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 .portfoilo-header-suptitle{
     margin-bottom: 8px;
@@ -600,9 +629,7 @@ body {
     padding-right: 32px;
     padding-bottom: 164px;
     transform: translatey(100%);
-    transition-property: transform;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition); 
 }
 .over-text{
     font-size: 16px;
@@ -613,11 +640,17 @@ body {
    position: relative; 
    overflow: hidden;     
 }
-.port-over:focus .over,
-.port-over:hover .over{
+.portfolio-img:hover .over,
+.portfolio-img:focus .over{
     transform: translatey(0%);
 }
+
 /* .port-img{} */
+.portfoilo-img-card:focus,
+.portfoilo-img-card:hover{
+    border-color: #F4F4FD;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 
 /**
   |============================
@@ -636,8 +669,9 @@ body {
     width: 100%;
     height: 100%;
     background-color:rgba(46, 47, 66, 0.4);
-    transition-property: opacity, visibility;  
-    transition-duration: 300ms;
+    transition-property: opacity, visibility, transform var(--transition);
+    /* transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .modal {
     position: absolute;
@@ -668,13 +702,22 @@ body {
     border-radius: 50%;
 
 }
-.modal-btn:focus,
-.modal-btn:hover{
-    background: rgb(255, 71, 71);
-}
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.1);
 }
-.modal-icon { 
-    color: #2E2F42;  
+.modal-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2E2F42;
+    transition: color var(--transition), background-color var(--transition);
+}
+.modal-icon{
+  fill: currentColor;
+}
+.modal-btn:focus,
+.modal-btn:hover{
+    color: white;
+    background-color: #404BBF;
 }
